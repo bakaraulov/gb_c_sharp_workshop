@@ -8,7 +8,7 @@ int count = 0;
 
 while (value != number1)
     {
-    Console.WriteLine("Введите загаданное число: ");
+    Console.Write("Введите загаданное число: ");
     number1 = int.Parse(Console.ReadLine ()!);
     count += 1;
     if (value == number1)
