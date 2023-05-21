@@ -1,5 +1,8 @@
 ﻿// Игра: угадай число (guess the number)
-int value = 43; // число, которое необходимо угодять
+
+Console.Clear ();
+// int value = 43; // ввод числа вручную
+int value = new Random().Next(0, 101);  // генератор
 int number1 = 0;
 int count = 0;
 
