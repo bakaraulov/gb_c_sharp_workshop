@@ -1,5 +1,5 @@
 ## ***Преподаватель: Аннаева Эльвира*** 
-https://t.me/annaevaelvira <br></p> elviraw@mail.ru <br></p> https://github.com/Elvira333*** <br></p>
+https://t.me/annaevaelvira <br></p> elviraw@mail.ru <br></p> https://github.com/Elvira333 <br></p>
 
 ### ***Студент: Караулов Борис*** 
 https://t.me/lyshu <br></p> b.karaulov@ya.ru <br></p> https://github.com/bakaraulov<br></p>
