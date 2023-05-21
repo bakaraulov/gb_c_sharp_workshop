@@ -1,4 +1,9 @@
-## ***Преподаватель: Аннаева Эльвира (https://t.me/annaevaelvira , elviraw@mail.ru , https://github.com/Elvira333)***
+## ***Преподаватель: Аннаева Эльвира*** 
+https://t.me/annaevaelvira <br></p> elviraw@mail.ru <br></p> https://github.com/Elvira333*** <br></p>
+
+### ***Студент: Караулов Борис*** 
+https://t.me/lyshu <br></p> b.karaulov@ya.ru <br></p> https://github.com/bakaraulov<br></p>
+
 
 ________________________
 # Семинар № 1 по C#
@@ -25,6 +30,8 @@ ________________________
 * **task8** - (c1дз1) - Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N
 
 ________________________
+
+## Дополнительная практика
 
 * **gtn_game - Игра: угадай число (guess the number)**
 
