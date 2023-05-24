@@ -14,7 +14,7 @@ void Info (int arg1, int arg2, int arg3)    // вывод проверки кв�
 {
     if (arg1 == arg3)
         {
-            Console.WriteLine(arg1 + " является квадратом " + number2);
+            Console.WriteLine(arg1 + " является квадратом " + arg2);
         }
     else
         {
