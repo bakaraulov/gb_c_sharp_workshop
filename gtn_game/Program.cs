@@ -24,4 +24,5 @@ while (value != number1)
         Console.WriteLine("Не угодали. Загаданное число больше. Повторите попытку.");
         }
     }
+    
 Console.WriteLine(" Спасибо за игру");
