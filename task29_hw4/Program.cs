@@ -15,13 +15,13 @@ int Prompt (string msg)
     return val;
 }
 
-int[] CreateRandomMassive(int val)
+int[] CreateRandomMassive(int val, int min, int max)
 {
     // int [] array = new int [8];
     int [] array = new int [val];
     for (int i=0; i<array.Length; i++)
     {
-        array[i] = new Random().Next(0, 2);  // генератор [a,b)
+        array[i] = new Random().Next(min, max);  // генератор [a,b)
         // Console.Write (array[i]+" ");
     }
     return array;
@@ -35,11 +35,13 @@ void PrintMassive(int[] array)
     }
 }
 
-int value = Prompt("Введите число ");
-Console.WriteLine (value);
+int value = Prompt("Введите длинну массива: ");
+int min = Prompt("Введите значение минимального эл-та массива: ");
+int max = Prompt("Введите значение максимального эл-та массива: ");
+Console.WriteLine ($"{value}, {min}, {max}");
 if (value>0)
 {
-    PrintMassive (CreateRandomMassive(value));
+    PrintMassive (CreateRandomMassive(value, min, max));
 }
 else
 {
