@@ -59,7 +59,7 @@ int[] MaxArray(int[] array)
     {
         if (array[current_index] > scdMaxIndex)
         {
-            if (current_index != fstMaxIndex)
+            if (current_index != scdMaxIndex)
             {
             scdMax = array[current_index];
             scdMaxIndex = current_index;
@@ -74,3 +74,11 @@ int[] array = {4,5,6,7,1,8,3,9};
 MaxArray(array);
 Console.WriteLine(MaxArray);
 
+void PrintMassive(int[] array)
+{
+    for (int i=0; i<array.Length; i++)
+    {
+        Console.Write (array[i]+" ");
+        Console.WriteLine (" ");
+    }
+}
