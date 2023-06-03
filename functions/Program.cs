@@ -1,46 +1,18 @@
-﻿// int[] array = {1,8,3,2,6};
-// int size = array.Length;
-// int current_index = 0;
-// int fstMax = array[current_index];
-// int scdMax = 0;
-// int fstMaxIndex = 0;
-// int scdMaxIndex = 0;
-// while (current_index < size)
-// {
-//     if (array[current_index]>fstMax)
-//     {
-//         fstMax = array[current_index];
-//         fstMaxIndex = current_index;
-//     }
-//     current_index ++;
-// }
-// current_index = 0;
-// if (fstMaxIndex == 0)
-// {
-//     scdMaxIndex = array[1];
-// }
-// while (current_index < size)
-// {
-//     if (array[current_index] > scdMaxIndex)
-//     {
-//         if (current_index != fstMaxIndex)
-//         {
-//         scdMax = array[current_index];
-//         scdMaxIndex = current_index;
-//         }
-//     }
-//     current_index ++;
-// }
-// Console.Clear ();
-int[] MaxArray(int[] array)
+﻿Console.Clear();
+
+double[] FindMiaxArray(double[] array)
 {
     int size = array.Length;
     int current_index = 0;
-    int fstMax = array[current_index];
-    int scdMax = 0;
+    double fstMax = array[current_index];
+    double scdMax = array[current_index];
     int fstMaxIndex = 0;
     int scdMaxIndex = 0;
-    int[] rezult = {fstMax , fstMaxIndex , scdMax , scdMaxIndex};
+    double fstMin = array[current_index];
+    double scdMin = array[current_index];
+    int fstMinIndex = 0;    
+    int scdMinIndex = 0;
+    double[] rezult = new double[8];
     while (current_index < size)
     {
         if (array[current_index]>fstMax)
@@ -48,37 +20,83 @@ int[] MaxArray(int[] array)
             fstMax = array[current_index];
             fstMaxIndex = current_index;
         }
+        if (array[current_index]<fstMin)
+        {
+            fstMin = array[current_index];
+            fstMinIndex = current_index;
+        }
         current_index ++;
     }
+    // Console.WriteLine($"fmsx {fstMax} {fstMaxIndex} fmin {fstMin} {fstMinIndex}"); debug output
     current_index = 0;
     if (fstMaxIndex == 0)
     {
-        scdMaxIndex = array[1];
+        scdMax = array[1];
+    }
+    if (fstMinIndex == 0)
+    {
+        scdMin = array[1];
     }
     while (current_index < size)
     {
-        if (array[current_index] > scdMaxIndex)
+        if (current_index != fstMaxIndex)
         {
-            if (current_index != scdMaxIndex)
+            if (array[current_index] > scdMax)
             {
-            scdMax = array[current_index];
-            scdMaxIndex = current_index;
+                scdMax = array[current_index];
+                scdMaxIndex = current_index;
+            }
+        }
+        if (current_index != fstMinIndex)
+        {
+            if (array[current_index] < scdMin)
+            {
+                scdMin = array[current_index];
+                scdMinIndex = current_index;
             }
         }
         current_index ++;
     }
+    // Console.WriteLine($"smax {scdMax} {scdMaxIndex} smin {scdMin} {scdMinIndex}"); debug output
+
+    rezult[0]=fstMax;
+    rezult[1]=fstMin;
+    rezult[2]=scdMax;
+    rezult[3]=scdMin;
+    rezult[4]=fstMaxIndex;
+    rezult[5]=fstMinIndex;
+    rezult[6]=scdMaxIndex;
+    rezult[7]=scdMinIndex;
     return rezult;
 }
 
-int[] array = {4,5,6,7,1,8,3,9};
-MaxArray(array);
-Console.WriteLine(MaxArray);
+int Prompt (string msg)
+{
+    Console.Write(msg);
+    string value = Console.ReadLine();
+    if ((int.TryParse(value, out int val)) == false)
+    {
+        Console.WriteLine("Это не число ");
+    }
+    return val;
+}
+
+int[] CreateRandomMassive(int val)
+{
+    // int [] array = new int [8];
+    int [] array = new int [val];
+    for (int i=0; i<array.Length; i++)
+    {
+        array[i] = new Random().Next(0, 100);  // генератор [a,b)
+        // Console.Write (array[i]+" ");
+    }
+    return array;
+}
 
 void PrintMassive(int[] array)
 {
     for (int i=0; i<array.Length; i++)
     {
         Console.Write (array[i]+" ");
-        Console.WriteLine (" ");
     }
 }
