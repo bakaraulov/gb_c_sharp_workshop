@@ -1,6 +1,6 @@
 ﻿Console.Clear();
 
-double[] FindMiaxArray(double[] array)
+double[] FindMiMaArray(double[] array)
 {
     int size = array.Length;
     int current_index = 0;
