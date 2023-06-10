@@ -74,10 +74,13 @@ int Prompt (string msg)
 {
     Console.Write(msg);
     string value = Console.ReadLine();
-    if ((int.TryParse(value, out int val)) == false)
+    int val = 0;
+    while ((int.TryParse(value, out val)) != true)
     {
-        Console.WriteLine("Это не число ");
+        Console.Write("Неверный ввод. Повторите: ");
+        value = Console.ReadLine();
     }
+    Console.Clear();
     return val;
 }
 
