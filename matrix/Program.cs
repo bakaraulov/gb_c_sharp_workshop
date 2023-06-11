@@ -40,14 +40,85 @@ int[,] CreateMRandoMatrix (int rows , int colums , int from , int to)
     return matrix;
 }
 
-// int[,] FindMimaMatrix(int[,] matrix)
-// {
+void RotateMatrixClockwise( int[,] matrix, int time)
+{
+    for(int k = 0; k < time; k++)
+    {
+        if (matrix.GetLength(0)==matrix.GetLength(1))
+        {
+            for (int i = 0; i < matrix.GetLength(0) / 2; i++)
+            {
+                for (int j = i; j < matrix.GetLength(0) - i - 1; j++)
+                {
+                    int temp = matrix[i, j];
+                    matrix[i, j] = matrix[matrix.GetLength(0) - 1 - j, i];
+                    matrix[matrix.GetLength(0) - 1 - j, i] = matrix[matrix.GetLength(0) - 1 - i, matrix.GetLength(0) - 1 - j];
+                    matrix[matrix.GetLength(0) - 1 - i, matrix.GetLength(0) - 1 - j] = matrix[j, matrix.GetLength(0) - 1 - i];
+                    matrix[j, matrix.GetLength(0) - 1 - i] = temp;
+                }
+            }
+            Console.WriteLine();
+        }
+        else
+        {
+            Console.WriteLine("Матрица не квадратна...");
+        }
+    }
+}
 
-// }
+void RotateMatrixMainDiagonal(int[,] matrix)
+{
+    if (matrix.GetLength(0)==matrix.GetLength(1))
+    {
+        for (int i = 0; i < matrix.GetLength(0); ++i)
+        {
+            for (int j = 0; j < i; ++j)
+                {
+                    int temp = matrix[i,j];
+                    matrix[i,j] = matrix[j,i];
+                    matrix[j,i] = temp;
+            }
+        }
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine("Матрица не квадратна...");
+    }
+}
+
+void RotateMatrixMiddlelColum (int[,] matrix)
+{
+    if (matrix.GetLength(0)==matrix.GetLength(1))
+    {
+        for (int i = 0; i < matrix.GetLength(0); ++i)
+        {
+            for (int j = 0; j < matrix.GetLength(0) / 2; ++j)
+            {
+                int temp = matrix[i,j];
+                matrix[i,j] = matrix[i,matrix.GetLength(0) - j - 1];
+                matrix[i,matrix.GetLength(0) - j - 1] = temp;
+            }
+        }
+        Console.WriteLine();
+    }
+    else
+    {
+        Console.WriteLine("Матрица не квадратна...");
+    }
+}
 
 int row = Prompt("Ведите количество строк массива: ");
 int col = Prompt("Введите количество столбцов массива: ");
 int from = Prompt("Введите начально значение элементов массива: ");
 int to = Prompt("Введите конечное значение элементов массива: ");
-int[,] matr = CreateMRandoMatrix(row,col,from,to);
-PrintMatrix(matr);
+int[,] matrix = CreateMRandoMatrix(row,col,from,to);
+PrintMatrix(matrix);
+
+// RotateMatrixMiddlelColum(matrix);
+
+// RotateMatrixMainDiagonal(matrix);
+
+// RotateMatrixClockwise(matrix,2);
+
+// PrintMatrix(matrix);

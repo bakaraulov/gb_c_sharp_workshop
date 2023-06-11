@@ -68,8 +68,8 @@ double[] summCol = new double [matr.GetLength(1)];
 
 PrintMatrix(matr);
 Console.WriteLine();
-PrintArray(summCol);
-Console.WriteLine();
+// PrintArray(summCol);
+// Console.WriteLine();
 
 for (int j = 0 ; j < matr.GetLength(1) ; j ++)
 {
