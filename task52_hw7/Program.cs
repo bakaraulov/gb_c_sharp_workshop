@@ -25,7 +25,7 @@ int Prompt (string msg)
 
 void PrintArray(double[] array) 
 {
-    for (int i = 0; i < array.Length - 1; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + "_");
     }

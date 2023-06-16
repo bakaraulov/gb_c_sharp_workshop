@@ -86,12 +86,10 @@ int Prompt (string msg)
 
 int[] CreateRandomMassive(int val)
 {
-    // int [] array = new int [8];
     int [] array = new int [val];
     for (int i=0; i<array.Length; i++)
     {
         array[i] = new Random().Next(0, 100);  // генератор [a,b)
-        // Console.Write (array[i]+" ");
     }
     return array;
 }
