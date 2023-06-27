@@ -28,13 +28,9 @@ int Ackermann (int m, int n)
     {
         return Ackermann(m - 1, 1);
     }
-    else if (m > 0 && n > 0) 
-    {
-        return Ackermann(m - 1, Ackermann(m, n - 1));
-    }
     else
     {
-    return Ackermann(m, n);
+        return Ackermann(m - 1, Ackermann(m, n - 1));
     }
 }
 
@@ -45,6 +41,4 @@ if (num1<0) num1 = num1*-1;
 if (num2<0) num2 = num2*-1;
 
 int ackermann = Ackermann(num1, num2);
-
-
 Console.WriteLine($"Результат функции Аккермана для чисел {num1} и {num2} равен: {ackermann}");
